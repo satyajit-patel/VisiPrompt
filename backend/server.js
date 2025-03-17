@@ -41,6 +41,14 @@ app.post('/api/v1/generate-image', async (req, res) => {
   }
 });
 
+app.get("/api/v1/ping", (req, res) => {
+  res.json({message: "pong"});
+});
+
+app.get("/", (req, res) => {
+  res.send("UP");
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
