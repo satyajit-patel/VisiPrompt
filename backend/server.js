@@ -12,6 +12,7 @@ app.use(express.json());
 
 app.post('/api/v1/generate-image', async (req, res) => {
   const { prompt } = req.body;
+  console.log(prompt);
 
   if (!prompt) {
     return res.status(400).json({ error: 'Prompt is required' });
