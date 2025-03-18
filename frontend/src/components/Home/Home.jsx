@@ -35,11 +35,20 @@ function Home() {
       setError("Please enter a prompt");
       return;
     }
-
+  
+    // List of blocked words
+    const blockedWords = ["sex", "vagina", "porn", "pussy", "nude", "penis", "xxx"];
+    const lowerCasePrompt = prompt.toLowerCase();
+  
+    if (blockedWords.some((word) => lowerCasePrompt.includes(word))) {
+      setError("I can't generate this. Try something else.");
+      return;
+    }
+  
     setLoading(true);
     setError("");
     setImageUrl("");
-
+  
     try {
       const VITE_BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
       const response = await axios.post(
@@ -54,6 +63,7 @@ function Home() {
       setLoading(false);
     }
   };
+  
 
   return (
     <>
