@@ -37,7 +37,17 @@ function Home() {
     }
   
     // List of blocked words
-    const blockedWords = ["sex", "vagina", "porn", "pussy", "nude", "penis", "xxx"];
+    const blockedWords = [
+  	"sex", "vagina", "porn", "pussy", "nude", "penis", "fuck", "xxx",
+  	"boobs", "cock", "dick", "ass", "naked", "erotic", "fetish", "hardcore",
+  	"hentai", "blowjob", "cum", "deepthroat", "gangbang", "lesbian", "gayporn",
+  	"anal", "bdsm", "orgy", "stripper", "escort", "molestation", "rape", "incest",
+  	"pedophile", "childporn", "bestiality", "necrophilia", "prostitute", "sexting",
+  	"hooker", "slut", "whore", "arse", "clit", "genitals", "ejaculation", "masturbation",
+  	"sperm", "tit", "breasts", "handjob", "groping", "voyeur", "cunnilingus",
+  	"rimjob", "bondage", "dominatrix", "snuff", "bareback", "fisting"
+    ];
+
     const lowerCasePrompt = prompt.toLowerCase();
   
     if (blockedWords.some((word) => lowerCasePrompt.includes(word))) {
